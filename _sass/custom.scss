@@ -1,0 +1,41 @@
+$font-stack: -apple-system, BlinkMacSystemFont, sans-serif;
+
+body {
+  font: 100% $font-stack;
+  color: #ffffff;
+  font-size: 14pt;
+  background-color: #1f57b3;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+/* unvisited link */
+a:link {
+ color: white;
+}
+
+/* visited link */
+a:visited {
+ color: white;
+}
+
+/* mouse over link */
+a:hover {
+ color: white;
+ text-decoration: none;
+}
+
+/* selected link */
+a:active {
+ color: white;
+ text-decoration: none;
+}
+
+#footer {
+  text-align: center;
+  font-size: 10pt;
+}
