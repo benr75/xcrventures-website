@@ -1,0 +1,56 @@
+$font-stack: -apple-system, BlinkMacSystemFont, sans-serif;
+
+body {
+  font: 100% $font-stack;
+  color: #ffffff;
+  background-color: #1f57b3;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+  font-size: 10pt;
+}
+
+.content{
+    padding-top: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.5em;
+}
+
+.details {
+    width: calc(100% - 200px);
+    align-items: center;
+    padding: 20px;
+}
+@media only screen and (max-width: 480px) {
+    .content {
+        flex-direction: column;
+    }
+    .details {
+        width: 100%;
+    }
+}
