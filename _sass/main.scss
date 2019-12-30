@@ -54,3 +54,25 @@ body {
         width: 100%;
     }
 }
+
+/* unvisited link */
+a:link {
+ color: white;
+}
+
+/* visited link */
+a:visited {
+ color: white;
+}
+
+/* mouse over link */
+a:hover {
+ color: white;
+ text-decoration: none;
+}
+
+/* selected link */
+a:active {
+ color: white;
+ text-decoration: none;
+}
