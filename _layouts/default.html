@@ -3,17 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/normalize.css">
-    <link rel="stylesheet" href="/assets/css/skeleton.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" /> 
     <link rel="shortcut icon" type="image/png" href="favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+        background-color:#1f57b3;
+      }
+      
+      .xcrlinks a {
+        color:white;
+        text-decoration:underline;
+      }
+    </style>
   </head>
   <body>
-    <!-- .container is main centered wrapper -->
-    <div class="container">
+    <div class="is-spaced has-text-centered"><br/><img src="/assets/images/xcr.png" width="300"></div>
+  
+    <section class="section xcrlinks">
+    <div class="container has-text-white">
       {{ content }}
     </div>
-    <footer id="footer">© XCR Ventures, LLC. 2023</footer>
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">© XCR Ventures, LLC. 2023</div>
+    </footer>
+  
   </body>
 </html>
