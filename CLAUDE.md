@@ -22,7 +22,7 @@ The page is assembled from includes; content is data-driven where it repeats.
 - `_layouts/default.html` — the shell. Loads Google Fonts (Saira / Saira Expanded / Space Mono) and **Lucide icons** (CDN) plus the compiled stylesheet, then renders `site-header` → `{{ content }}` → `site-footer`. Contains the small inline script that (a) calls `lucide.createIcons()` and (b) toggles `.is-scrolled` on the header past 12px of scroll.
 - `index.html` — front matter + three includes in order: `hero.html`, `portfolio.html`, `about.html`. Header and footer come from the layout.
 - `_includes/` — `site-header`, `hero`, `portfolio`, `about`, `site-footer`, and `wordmark.html` (the reusable XCR wordmark, built as live text — pass `size` and optional `tone=white|ink|blue`; omit `tone` to inherit the parent color, as the header does on scroll).
-- `_data/portfolio.yml` — **source of truth for the Portfolio section.** Groups (Fund 1 · Closed / Exits / Past portfolio) each carry a `tone` (badge style) and a `companies` list. `portfolio.html` loops it. The hero stat band ("8 companies backed · 1 exit") is **hand-coded in `hero.html` and derived from this list — keep them in sync** when adding/removing companies.
+- `_data/portfolio.yml` — **source of truth for the Portfolio section.** Groups (Active / Exits / Past portfolio — the whole book is Fund 1, which is closed) each carry a `tone` (badge style) and a `companies` list. Companies without a `url` (no live site) render as a non-clickable card. `portfolio.html` loops it. The hero stat band ("8 companies backed · 1 exit") is **hand-coded in `hero.html` and derived from this list — keep them in sync** when adding/removing companies.
 
 ### Styling
 
