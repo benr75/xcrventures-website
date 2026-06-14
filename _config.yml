@@ -1,1 +1,6 @@
-exclude: ["README.md", "site.rb"]
+exclude:
+  - README.md
+  - site.rb
+  - CLAUDE.md
+  - "CURRENT SITE/"
+  - design_handoff_xcr_website_redesign/

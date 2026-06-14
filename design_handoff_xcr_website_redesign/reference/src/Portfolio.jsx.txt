@@ -1,0 +1,75 @@
+// XCR Ventures website — Portfolio (real companies, grouped by fund/status)
+const { Card, Badge, Eyebrow } = window.XCRVenturesDesignSystem_019e09;
+
+function CompanyCard({ c, tone }) {
+  return (
+    <a href={c.url} target="_blank" rel="noopener" style={{ textDecoration: 'none', display: 'block' }}>
+      <Card variant="default" interactive padding="var(--space-5)" style={{ height: '100%' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+          <Badge tone={tone}>{c.sector}</Badge>
+          <i data-lucide="arrow-up-right" style={{ width: 16, height: 16, color: 'var(--text-faint)' }}></i>
+        </div>
+        <h3 style={{ font: 'var(--type-h4)', color: 'var(--text-strong)', marginBottom: 6 }}>{c.name}</h3>
+        <p style={{ font: 'var(--type-body-sm)', color: 'var(--text-muted)', minHeight: 40 }}>{c.blurb}</p>
+        {c.note ? (
+          <div style={{ font: 'var(--type-mono)', fontSize: 11, color: 'var(--text-faint)', marginTop: 14, letterSpacing: '0.04em' }}>{c.note}</div>
+        ) : null}
+        {c.acquirer ? (
+          <div style={{ font: 'var(--type-label)', color: 'var(--accent)', marginTop: 14, display: 'flex', alignItems: 'center', gap: 6 }}>
+            <i data-lucide="check-circle-2" style={{ width: 14, height: 14 }}></i> Acquired by {c.acquirer}
+          </div>
+        ) : null}
+      </Card>
+    </a>
+  );
+}
+
+function Group({ label, count, children }) {
+  return (
+    <div style={{ marginTop: 48 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 22, paddingBottom: 14, borderBottom: '1px solid var(--border)' }}>
+        <span style={{ font: 'var(--type-label)', color: 'var(--text-strong)', letterSpacing: '0.12em' }}>{label}</span>
+        <span style={{ font: 'var(--type-mono)', fontSize: 11, color: 'var(--text-faint)' }}>{String(count).padStart(2, '0')}</span>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function Portfolio() {
+  const data = window.XCR_PORTFOLIO;
+  return (
+    <section id="portfolio" style={{ background: 'var(--surface-card)', padding: '104px 40px', borderTop: '1px solid var(--border)' }}>
+      <div style={{ maxWidth: 'var(--container-xl)', margin: '0 auto' }}>
+        <Eyebrow>Portfolio</Eyebrow>
+        <h2 style={{
+          font: 'var(--fw-bold) clamp(32px,5vw,56px)/1 var(--font-display)',
+          textTransform: 'uppercase', letterSpacing: '-0.01em',
+          color: 'var(--text-strong)', margin: '18px 0 0',
+        }}>Companies we've backed</h2>
+        <p style={{ font: 'var(--type-body-lg)', color: 'var(--text-muted)', maxWidth: '56ch', marginTop: 16 }}>
+          A small, deliberate book of companies across consumer, software and hardware.
+        </p>
+
+        <Group label="Fund 1 · Closed" count={data.fund1.length}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+            {data.fund1.map((c) => <CompanyCard key={c.name} c={c} tone="blue" />)}
+          </div>
+        </Group>
+
+        <Group label="Exits" count={data.exits.length}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+            {data.exits.map((c) => <CompanyCard key={c.name} c={c} tone="solid" />)}
+          </div>
+        </Group>
+
+        <Group label="Past portfolio" count={data.past.length}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+            {data.past.map((c) => <CompanyCard key={c.name} c={c} tone="neutral" />)}
+          </div>
+        </Group>
+      </div>
+    </section>
+  );
+}
+window.Portfolio = Portfolio;

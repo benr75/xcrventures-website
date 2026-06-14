@@ -1,0 +1,19 @@
+{%- comment -%}
+  XCR wordmark, built as live text per the brand Wordmark spec.
+  Params:
+    size — font-size (px) of "XCR". "VENTURES" is ~0.34x, gap ~0.22x.
+    tone — white | ink | blue. Omit to inherit the parent's color
+           (used in the header, which recolors on scroll).
+{%- endcomment -%}
+{%- assign wm_size = include.size | default: 26 -%}
+{%- assign ven_size = wm_size | times: 0.34 | round: 2 -%}
+{%- assign wm_gap = wm_size | times: 0.22 | round: 2 -%}
+{%- assign wm_color = '' -%}
+{%- if include.tone == 'white' -%}{%- assign wm_color = 'color:#ffffff;' -%}
+{%- elsif include.tone == 'ink' -%}{%- assign wm_color = 'color:#0a0e14;' -%}
+{%- elsif include.tone == 'blue' -%}{%- assign wm_color = 'color:#1f57b3;' -%}
+{%- endif -%}
+<span class="xcr-wordmark" style="{{ wm_color }}gap:{{ wm_gap }}px;" aria-label="XCR Ventures">
+  <strong style="font-size:{{ wm_size }}px;">XCR</strong>
+  <span class="ventures" style="font-size:{{ ven_size }}px;">Ventures</span>
+</span>

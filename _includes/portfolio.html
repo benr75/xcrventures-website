@@ -1,0 +1,39 @@
+<section class="portfolio" id="portfolio">
+  <div class="portfolio__inner">
+    <span class="xcr-eyebrow">Portfolio</span>
+    <h2 class="portfolio__title">Companies we've backed</h2>
+    <p class="portfolio__sub">All companies are part of Fund 1, which is closed — a small, deliberate book across consumer, software and hardware.</p>
+
+    {% for group in site.data.portfolio.groups %}
+      {% assign count = group.companies | size %}
+      <div class="pf-group">
+        <div class="pf-group__head">
+          <span class="pf-group__label">{{ group.label }}</span>
+          <span class="pf-group__count">{% if count < 10 %}0{% endif %}{{ count }}</span>
+        </div>
+        <div class="portfolio-grid">
+          {% for c in group.companies %}
+            {% if c.url %}
+            <a class="company-card" href="{{ c.url }}" target="_blank" rel="noopener">
+            {% else %}
+            <div class="company-card company-card--static">
+            {% endif %}
+              <div class="company-card__top">
+                <span class="badge badge--{{ group.tone }}">{{ c.sector }}</span>
+                {% if c.url %}<i data-lucide="arrow-up-right"></i>{% endif %}
+              </div>
+              <h3 class="company-card__name">{{ c.name }}</h3>
+              <p class="company-card__blurb">{{ c.blurb }}</p>
+              {% if c.note %}
+                <div class="company-card__note">{{ c.note }}</div>
+              {% endif %}
+              {% if c.acquirer %}
+                <div class="company-card__acq"><i data-lucide="check-circle-2"></i> Acquired by {{ c.acquirer }}</div>
+              {% endif %}
+            {% if c.url %}</a>{% else %}</div>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

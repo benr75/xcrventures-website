@@ -1,0 +1,64 @@
+/* XCR Ventures — Typography tokens */
+
+:root {
+  /* ---- Families ---- */
+  /* Display / wordmark: wide squared aerospace grotesque */
+  --font-display: 'Saira Expanded', 'Saira', system-ui, sans-serif;
+  /* Body / UI: readable normal-width companion */
+  --font-body:    'Saira', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Mono: drafting annotations, dimensions, code, technical labels */
+  --font-mono:    'Space Mono', 'SFMono-Regular', ui-monospace, monospace;
+
+  /* ---- Weights ---- */
+  --fw-light:     300; /* @kind font */
+  --fw-regular:   400; /* @kind font */
+  --fw-medium:    500; /* @kind font */
+  --fw-semibold:  600; /* @kind font */
+  --fw-bold:      700; /* @kind font */
+  --fw-extrabold: 800; /* @kind font */
+  --fw-black:     900; /* @kind font */
+
+  /* ---- Type scale (1.25 major-third-ish, tuned) ---- */
+  --text-2xs:  11px;
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  30px;
+  --text-3xl:  38px;
+  --text-4xl:  48px;
+  --text-5xl:  62px;
+  --text-6xl:  80px;
+  --text-7xl:  104px;
+
+  /* ---- Line heights ---- */
+  --leading-tight:   1.05; /* @kind font */
+  --leading-snug:    1.18; /* @kind font */
+  --leading-normal:  1.45; /* @kind font */
+  --leading-relaxed: 1.65; /* @kind font */
+
+  /* ---- Letter spacing ----
+     Wide squared display type wants air; VENTURES is widely tracked in the
+     wordmark. Body stays neutral. Mono labels are tracked + uppercased.     */
+  --tracking-tightest: -0.02em; /* @kind font */
+  --tracking-tight:    -0.01em; /* @kind font */
+  --tracking-normal:   0;       /* @kind font */
+  --tracking-wide:     0.04em;  /* @kind font */
+  --tracking-wider:    0.12em;  /* @kind font */
+  --tracking-widest:   0.28em;  /* @kind font */
+
+  /* ---- Semantic roles ---- */
+  --type-wordmark:  var(--fw-black)    var(--text-5xl)/var(--leading-tight) var(--font-display);
+  --type-display:   var(--fw-extrabold) var(--text-5xl)/var(--leading-tight) var(--font-display);
+  --type-h1:        var(--fw-bold)     var(--text-4xl)/var(--leading-tight) var(--font-display);
+  --type-h2:        var(--fw-bold)     var(--text-3xl)/var(--leading-snug) var(--font-display);
+  --type-h3:        var(--fw-semibold) var(--text-2xl)/var(--leading-snug) var(--font-display);
+  --type-h4:        var(--fw-semibold) var(--text-xl)/var(--leading-snug) var(--font-display);
+  --type-body-lg:   var(--fw-regular)  var(--text-md)/var(--leading-relaxed) var(--font-body);
+  --type-body:      var(--fw-regular)  var(--text-base)/var(--leading-normal) var(--font-body);
+  --type-body-sm:   var(--fw-regular)  var(--text-sm)/var(--leading-normal) var(--font-body);
+  --type-label:     var(--fw-bold)     var(--text-xs)/1.2 var(--font-mono);
+  --type-mono:      var(--fw-regular)  var(--text-sm)/var(--leading-normal) var(--font-mono);
+}

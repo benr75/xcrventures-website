@@ -1,0 +1,76 @@
+// XCR Ventures website — About (founder + blueprint philosophy)
+const { Eyebrow, Wordmark } = window.XCRVenturesDesignSystem_019e09;
+
+const PILLARS = [
+  { icon: 'pen-tool', title: 'The first check', body: 'XCR backs founders early and stays close — angel and early-stage capital across consumer, software and hardware.' },
+  { icon: 'route', title: 'A clear path', body: 'Capital is the start. We consult on the route ahead — hiring, GTM, the next raise. The blueprint, not the spaceship.' },
+  { icon: 'compass', title: 'Along for the journey', body: 'A venture is a journey. There is risk ahead, but also excitement. We stay on the line from first check to outcome.' },
+];
+
+function About() {
+  return (
+    <section id="about" style={{ background: 'var(--bg-page)', padding: '104px 40px' }}>
+      <div style={{ maxWidth: 'var(--container-xl)', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 64, alignItems: 'start' }}>
+          <div>
+            <Eyebrow>About</Eyebrow>
+            <h2 style={{
+              font: 'var(--fw-bold) clamp(32px,5vw,52px)/1.02 var(--font-display)',
+              textTransform: 'uppercase', letterSpacing: '-0.01em',
+              color: 'var(--text-strong)', margin: '18px 0 0', maxWidth: '18ch',
+            }}>XCR doesn't build spaceships. XCR is the blueprint.</h2>
+            <p style={{ font: 'var(--type-body-lg)', color: 'var(--text-body)', maxWidth: '60ch', marginTop: 22 }}>
+              <a href="https://www.linkedin.com/in/benreubenstein/" target="_blank" rel="noopener" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}>Ben Reubenstein</a> founded
+              XCR Ventures in 2015. The firm invests in and consults with
+              companies at a variety of stages of growth — our business is not to
+              build prototypes or products, but to provide a clear path to the
+              realization of new ideas.
+            </p>
+            <p style={{ font: 'var(--type-body)', color: 'var(--text-muted)', maxWidth: '60ch', marginTop: 16 }}>
+              XCR is not currently making new investments.
+            </p>
+          </div>
+
+          {/* drafting-styled founder card */}
+          <div style={{
+            position: 'relative', overflow: 'hidden',
+            backgroundColor: 'var(--blueprint-field)',
+            backgroundImage: 'var(--bp-grid-image)', backgroundSize: 'var(--bp-grid-size)',
+            color: 'var(--text-on-blue)', borderRadius: 'var(--radius-lg)',
+            padding: '32px', boxShadow: 'var(--shadow-blue-glow)',
+          }}>
+            <div style={{ font: 'var(--type-mono)', fontSize: 11, color: 'rgba(255,255,255,0.6)', letterSpacing: '0.1em', marginBottom: 24 }}>// FOUNDER · GENERAL PARTNER</div>
+            <div style={{ font: 'var(--fw-bold) 30px/1.05 var(--font-display)', textTransform: 'uppercase', letterSpacing: '-0.01em' }}>Ben<br/>Reubenstein</div>
+            <div style={{ height: 1, background: 'var(--border-on-blue)', margin: '24px 0' }}></div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {[['Founded', '2015'], ['Role', 'Founder & GP'], ['Status', 'Closed to new deals']].map(([k, v]) => (
+                <div key={k} style={{ display: 'flex', justifyContent: 'space-between', font: 'var(--type-mono)', fontSize: 12, letterSpacing: '0.04em' }}>
+                  <span style={{ color: 'rgba(255,255,255,0.55)' }}>{k}</span>
+                  <span style={{ color: 'var(--xcr-white)' }}>{v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28, marginTop: 72 }}>
+          {PILLARS.map((p, i) => (
+            <div key={p.title} style={{ borderTop: '2px solid var(--accent)', paddingTop: 22 }}>
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                width: 44, height: 44, borderRadius: 'var(--radius-md)',
+                background: 'var(--accent-soft)', color: 'var(--accent)', marginBottom: 18,
+              }}>
+                <i data-lucide={p.icon} style={{ width: 22, height: 22 }}></i>
+              </div>
+              <div style={{ font: 'var(--type-label)', color: 'var(--text-faint)', marginBottom: 8 }}>0{i + 1}</div>
+              <h3 style={{ font: 'var(--type-h4)', color: 'var(--text-strong)', marginBottom: 10 }}>{p.title}</h3>
+              <p style={{ font: 'var(--type-body)', color: 'var(--text-body)' }}>{p.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+window.About = About;

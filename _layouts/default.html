@@ -1,36 +1,40 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" /> 
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "XCR Ventures" }}</title>
+    <meta name="description" content="{{ page.description | default: 'XCR Ventures — angel and early-stage investment. Founded by Ben Reubenstein in 2015. Not currently making new investments.' }}">
 
-    <style>
-      body {
-        background-color:#1f57b3;
-      }
-      
-      .xcrlinks a {
-        color:white;
-        text-decoration:underline;
-      }
-    </style>
+    <link rel="shortcut icon" type="image/png" href="/assets/images/xcr-avatar.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&family=Saira+Expanded:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
   </head>
   <body>
-    <div class="is-spaced has-text-centered"><br/><img src="/assets/images/xcr.png" width="300"></div>
-  
-    <section class="section xcrlinks">
-    <div class="container has-text-white">
+    <span id="top" aria-hidden="true"></span>
+    {% include site-header.html %}
+    <main>
       {{ content }}
-    </div>
-    </section>
-    <footer class="footer">
-      <div class="content has-text-centered">© XCR Ventures, LLC. 2026</div>
-    </footer>
-  
+    </main>
+    {% include site-footer.html %}
+
+    <script src="https://unpkg.com/lucide@0.544.0/dist/umd/lucide.min.js"></script>
+    <script>
+      if (window.lucide) { lucide.createIcons(); }
+
+      (function () {
+        var header = document.getElementById('site-header');
+        if (!header) return;
+        var onScroll = function () {
+          header.classList.toggle('is-scrolled', window.scrollY > 12);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      })();
+    </script>
   </body>
 </html>

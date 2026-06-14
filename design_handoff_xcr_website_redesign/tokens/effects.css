@@ -1,0 +1,75 @@
+/* XCR Ventures — Effects: radius, borders, shadows, blueprint motifs.
+   The brand letterforms are squared with softly-rounded corners; UI radii
+   echo that — small and technical, never pill-soft (except true pills).     */
+
+:root {
+  /* ---- Radii ---- */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;   /* default control / card radius */
+  --radius-lg:   10px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-pill: 999px;
+
+  /* ---- Border widths ---- */
+  --border-w:        1px;
+  --border-w-thick:  2px;
+  --border-w-draw:   1.5px; /* drafted linework weight */
+
+  /* ---- Shadows ---- (cool, blue-tinted — sits over a blue world) */
+  --shadow-xs:  0 1px 2px rgba(13, 42, 92, 0.08);
+  --shadow-sm:  0 1px 3px rgba(13, 42, 92, 0.10), 0 1px 2px rgba(13, 42, 92, 0.06);
+  --shadow-md:  0 4px 12px rgba(13, 42, 92, 0.12), 0 2px 4px rgba(13, 42, 92, 0.08);
+  --shadow-lg:  0 12px 32px rgba(13, 42, 92, 0.16), 0 4px 8px rgba(13, 42, 92, 0.08);
+  --shadow-xl:  0 24px 60px rgba(13, 42, 92, 0.22), 0 8px 16px rgba(13, 42, 92, 0.10);
+  --shadow-blue-glow: 0 0 0 1px rgba(31, 87, 179, 0.35), 0 8px 28px rgba(31, 87, 179, 0.30);
+  --shadow-inset: inset 0 1px 2px rgba(13, 42, 92, 0.08);
+
+  /* ---- Focus ---- */
+  --ring-width: 3px;
+  --ring-color: rgba(72, 128, 218, 0.45);
+
+  /* ---- Motion ---- (crisp, mechanical — no playful bounce) */
+  --ease-standard: cubic-bezier(0.2, 0.0, 0.1, 1); /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);  /* @kind other */
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);     /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   200ms; /* @kind other */
+  --dur-slow:   320ms; /* @kind other */
+
+  /* =====================================================================
+     BLUEPRINT MOTIFS — reusable backgrounds & linework as CSS values
+     ===================================================================== */
+
+  /* The drafting grid, drawn in pure CSS (use over --blueprint-field).
+     Composes a 32px minor grid + 128px major grid of white hairlines.
+     Apply --bp-grid-image to background-image and --bp-grid-size to
+     background-size (they are kept separate so they can layer cleanly with
+     the vignette).                                                          */
+  --bp-grid-image:
+    linear-gradient(rgba(255,255,255,0.40) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.40) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.20) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.20) 1px, transparent 1px); /* @kind other */
+  --bp-grid-size:
+    var(--grid-unit-major) var(--grid-unit-major),
+    var(--grid-unit-major) var(--grid-unit-major),
+    var(--grid-unit) var(--grid-unit),
+    var(--grid-unit) var(--grid-unit);
+
+  /* Diagonal hatch fill (as seen filling the XCR letterforms) */
+  --bp-hatch:
+    repeating-linear-gradient(45deg,
+      rgba(255,255,255,0.16) 0, rgba(255,255,255,0.16) 1.5px,
+      transparent 1.5px, transparent 7px); /* @kind other */
+
+  /* Lighting vignette / glare used behind the blueprint logo */
+  --bp-vignette:
+    radial-gradient(120% 90% at 50% 30%, rgba(255,255,255,0.18), transparent 55%),
+    radial-gradient(140% 120% at 50% 110%, rgba(8,27,61,0.55), transparent 60%); /* @kind other */
+
+  /* Dashed construction line */
+  --bp-dash: rgba(255,255,255,0.55);
+}
