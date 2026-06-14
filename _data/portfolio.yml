@@ -1,0 +1,47 @@
+# XCR Ventures portfolio — source of truth for the Portfolio section.
+# Groups render in this order. Hero stats (companies backed / exits) are
+# derived from these lists; keep them in sync when editing.
+groups:
+  - label: "Fund 1 · Closed"
+    tone: blue
+    companies:
+      - name: ProMentor
+        sector: Youth sports tech
+        blurb: Coaching and video platform for youth athletes and their families.
+        url: https://www.promentor.com/
+        note: Formerly TopYa!
+      - name: Nami
+        sector: App monetization
+        blurb: Subscription and paywall infrastructure for mobile apps.
+        url: https://www.namiml.com/
+      - name: RevAir
+        sector: Consumer hardware
+        blurb: Reverse-air hair drying technology for the home.
+        url: https://myrevair.com/
+      - name: Teakoe
+        sector: Beverage
+        blurb: Craft loose-leaf and sparkling tea, brewed in Colorado.
+        url: https://www.teakoe.com/
+  - label: Exits
+    tone: solid
+    companies:
+      - name: Venuetize
+        sector: Venue tech
+        blurb: Mobile-first guest engagement for stadiums and venues.
+        url: https://www.venuetize.com/
+        acquirer: Everi
+  - label: Past portfolio
+    tone: neutral
+    companies:
+      - name: Glow
+        sector: Smart energy
+        blurb: The smart energy tracker for the home.
+        url: https://www.indiegogo.com/projects/glow-the-smart-energy-tracker-for-your-home
+      - name: Heal
+        sector: Healthcare
+        blurb: Doctor house calls and in-home primary care.
+        url: https://heal.com/
+      - name: WAL
+        sector: Apparel
+        blurb: Direct-to-consumer apparel and outdoor goods.
+        url: https://www.walunderground.com/
