@@ -1,0 +1,39 @@
+// XCR Ventures website — Header / nav
+const { Wordmark } = window.XCRVenturesDesignSystem_019e09;
+
+function Header() {
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const root = document.getElementById('site');
+    if (!root) return;
+    const onScroll = () => setScrolled(root.scrollTop > 12);
+    root.addEventListener('scroll', onScroll);
+    return () => root.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <header style={{
+      position: 'sticky', top: 0, zIndex: 50,
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      padding: '0 40px', height: 72,
+      background: scrolled ? 'rgba(255,255,255,0.92)' : 'transparent',
+      backdropFilter: scrolled ? 'saturate(160%) blur(8px)' : 'none',
+      borderBottom: scrolled ? '1px solid var(--border)' : '1px solid transparent',
+      transition: 'background var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard)',
+    }}>
+      <Wordmark size={26} tone={scrolled ? 'ink' : 'white'} layout="inline" />
+      <nav style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+        {window.XCR_NAV.map((item) => (
+          <a key={item} href={'#' + item.toLowerCase()} style={{
+            font: 'var(--fw-bold) 12px/1 var(--font-mono)',
+            textTransform: 'uppercase', letterSpacing: '0.12em',
+            color: scrolled ? 'var(--text-body)' : 'rgba(255,255,255,0.82)',
+            textDecoration: 'none',
+            transition: 'color var(--dur-base) var(--ease-standard)',
+          }}>{item}</a>
+        ))}
+      </nav>
+    </header>
+  );
+}
+window.Header = Header;

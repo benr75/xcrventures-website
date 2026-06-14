@@ -1,0 +1,19 @@
+/* XCR Ventures — Fonts
+   ---------------------------------------------------------------------------
+   The XCR type system. The brand originally referenced Eurostile Extended for
+   the wordmark; that licensed face has been intentionally retired in favor of
+   the following web-native system, which carries the same wide, squared,
+   aerospace character across every weight and platform:
+
+     • Saira Expanded  — wide squared grotesque (display + wordmark). Carries a
+                         full weight range incl. Black (900) for "XCR".
+     • Saira           — normal-width companion for body / UI text.
+     • Space Mono      — drafting-style monospace for blueprint annotations,
+                         dimension callouts, eyebrows and technical labels.
+
+   These three families ARE the system — no substitution pending. Loaded from
+   Google Fonts; self-host the .woff2 files for production if offline use or
+   stricter performance budgets are required.
+   --------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700&family=Saira+Expanded:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');

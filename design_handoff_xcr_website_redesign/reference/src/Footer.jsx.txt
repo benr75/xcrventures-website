@@ -1,0 +1,45 @@
+// XCR Ventures website — Footer (blueprint field)
+const { Wordmark, Eyebrow } = window.XCRVenturesDesignSystem_019e09;
+
+function Footer() {
+  return (
+    <footer style={{
+      backgroundColor: 'var(--blue-950)',
+      backgroundImage: 'var(--bp-grid-image)',
+      backgroundSize: 'var(--bp-grid-size)',
+      color: 'var(--text-on-blue)', padding: '88px 40px 40px',
+    }}>
+      <div style={{ maxWidth: 'var(--container-xl)', margin: '0 auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 40, paddingBottom: 56, borderBottom: '1px solid var(--border-on-blue)' }}>
+          <div style={{ maxWidth: '38ch' }}>
+            <h2 style={{ font: 'var(--fw-bold) 38px/1.02 var(--font-display)', textTransform: 'uppercase', letterSpacing: '-0.01em', marginBottom: 16, color: 'var(--xcr-white)' }}>A clear path for new ideas.</h2>
+            <p style={{ font: 'var(--type-body)', color: 'var(--text-on-blue-muted)' }}>
+              XCR Ventures provides early capital and counsel — drawing the
+              clear path to the realization of new ideas.
+            </p>
+          </div>
+          <div style={{ display: 'flex', gap: 64 }}>
+            <div>
+              <Eyebrow tone="on-blue">Firm</Eyebrow>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 18 }}>
+                <a href="#portfolio" style={{ font: 'var(--type-body-sm)', color: 'var(--text-on-blue-muted)', textDecoration: 'none' }}>Portfolio</a>
+                <a href="#about" style={{ font: 'var(--type-body-sm)', color: 'var(--text-on-blue-muted)', textDecoration: 'none' }}>About</a>
+              </div>
+            </div>
+            <div>
+              <Eyebrow tone="on-blue">Connect</Eyebrow>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 18 }}>
+                <a href="https://www.linkedin.com/in/benreubenstein/" target="_blank" rel="noopener" style={{ font: 'var(--type-body-sm)', color: 'var(--text-on-blue-muted)', textDecoration: 'none' }}>LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 32, flexWrap: 'wrap', gap: 16 }}>
+          <Wordmark size={22} tone="white" layout="inline" />
+          <span style={{ font: 'var(--type-mono)', fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em' }}>© XCR VENTURES, LLC. 2026 · SCALE 1:1</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+window.Footer = Footer;

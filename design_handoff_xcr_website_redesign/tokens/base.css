@@ -1,0 +1,70 @@
+/* XCR Ventures — base reset & a few brand helpers.
+   Lightweight: tokens do the work; this just sets sensible defaults.        */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font: var(--type-body);
+  color: var(--text-body);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; color: var(--text-strong); }
+p { margin: 0; }
+a { color: var(--text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+::selection { background: var(--blue-200); color: var(--blue-950); }
+
+:focus-visible {
+  outline: var(--ring-width) solid var(--ring-color);
+  outline-offset: 2px;
+}
+
+/* ---- Brand helpers --------------------------------------------------- */
+
+/* Eyebrow / technical label — uppercase mono with wide tracking */
+.xcr-eyebrow {
+  font: var(--type-label);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--accent);
+}
+
+/* The drafting field: blue background + drawn grid. Drop content on top. */
+.xcr-blueprint {
+  background-color: var(--blueprint-field);
+  background-image: var(--bp-grid-image);
+  background-size: var(--bp-grid-size);
+  color: var(--text-on-blue);
+}
+
+/* Blueprint field with the lighting vignette layered on top */
+.xcr-blueprint--lit {
+  background-color: var(--blueprint-field);
+  background-image: var(--bp-vignette), var(--bp-grid-image);
+  background-size: 100% 100%, 100% 100%, var(--bp-grid-size);
+  color: var(--text-on-blue);
+}
+
+/* Diagonal hatch fill helper */
+.xcr-hatch { background-image: var(--bp-hatch); }
+
+/* Wordmark text helper: "XCR" set in display black, wide.
+   Pair a <strong> for XCR and a <span> for VENTURES for correct weighting. */
+.xcr-wordmark {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.xcr-wordmark .ventures {
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-widest);
+}

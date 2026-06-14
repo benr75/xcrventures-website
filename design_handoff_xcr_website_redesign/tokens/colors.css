@@ -1,0 +1,88 @@
+/* XCR Ventures — Color tokens
+   Brand palette is deliberately tight: one blue, its tints/shades, and true
+   black/white. Per brand law, logo elements are never multi-colored.        */
+
+:root {
+  /* ---- Core brand (from brand guide) ---- */
+  --xcr-blue:        #1f57b3; /* primary brand blue  */
+  --xcr-blue-light:  #95b6eb; /* light blue accent   */
+  --xcr-black:       #000000;
+  --xcr-white:       #ffffff;
+
+  /* ---- Blue tonal scale (anchored on #1f57b3) ---- */
+  --blue-50:   #eaf1fc;
+  --blue-100:  #c9dbf6;
+  --blue-200:  #95b6eb; /* == brand light blue */
+  --blue-300:  #6f9ce4;
+  --blue-400:  #4880da;
+  --blue-500:  #2b6cd7; /* blueprint field blue (background.png) */
+  --blue-600:  #1f57b3; /* == primary brand blue */
+  --blue-700:  #1a4a99;
+  --blue-800:  #143a7a;
+  --blue-900:  #0d2a5c;
+  --blue-950:  #081b3d;
+
+  /* ---- Blueprint surface (the drafting field) ---- */
+  --blueprint-field:  #2b6cd7; /* solid fill of the grid */
+  --blueprint-line:   rgba(255, 255, 255, 0.22); /* minor grid line */
+  --blueprint-line-major: rgba(255, 255, 255, 0.40); /* major grid line */
+  --blueprint-ink:    rgba(255, 255, 255, 0.92); /* drawn linework / glare */
+
+  /* ---- Cool neutrals (blue-tinted graphite) ---- */
+  --gray-0:    #ffffff;
+  --gray-50:   #f5f7fa;
+  --gray-100:  #eaeef4;
+  --gray-200:  #d6dde8;
+  --gray-300:  #b6c1d1;
+  --gray-400:  #8d99ac;
+  --gray-500:  #66728a;
+  --gray-600:  #4b566b;
+  --gray-700:  #353e4f;
+  --gray-800:  #222936;
+  --gray-900:  #131922;
+  --gray-950:  #0a0e14;
+  --gray-1000: #000000;
+
+  /* ---- Semantic / status (kept low-key — blueprint is the star) ---- */
+  --signal-positive: #1f8a54;
+  --signal-warning:  #c9871f;
+  --signal-danger:   #c0392b;
+  --signal-info:     var(--xcr-blue);
+
+  /* =====================================================================
+     SEMANTIC ALIASES — reference these in components, not raw scale values
+     ===================================================================== */
+
+  /* Page & surfaces (light context — letterhead / negative mark world) */
+  --bg-page:        var(--gray-50);
+  --bg-subtle:      var(--gray-100);
+  --surface-card:   var(--gray-0);
+  --surface-raised: var(--gray-0);
+  --surface-inset:  var(--gray-50);
+
+  /* Blueprint context (dark, blue field — the "full blueprint" world) */
+  --bg-blueprint:        var(--blueprint-field);
+  --surface-blueprint:   var(--blue-700);
+
+  /* Text */
+  --text-strong:  var(--gray-950);
+  --text-body:    var(--gray-800);
+  --text-muted:   var(--gray-500);
+  --text-faint:   var(--gray-400);
+  --text-on-blue: var(--xcr-white);
+  --text-on-blue-muted: rgba(255, 255, 255, 0.70);
+  --text-link:    var(--xcr-blue);
+
+  /* Borders & lines */
+  --border:        var(--gray-200);
+  --border-strong: var(--gray-300);
+  --border-blue:   var(--blue-200);
+  --border-on-blue: rgba(255, 255, 255, 0.28);
+
+  /* Brand application */
+  --accent:        var(--xcr-blue);
+  --accent-hover:  var(--blue-700);
+  --accent-active: var(--blue-800);
+  --accent-soft:   var(--blue-50);
+  --focus-ring:    var(--blue-400);
+}

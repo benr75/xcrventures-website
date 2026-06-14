@@ -1,0 +1,39 @@
+/* XCR Ventures — Spacing & sizing tokens
+   4px base grid — echoing the blueprint's modular drafting grid.            */
+
+:root {
+  --space-0:   0;
+  --space-px:  1px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-7:   32px;
+  --space-8:   40px;
+  --space-9:   48px;
+  --space-10:  64px;
+  --space-11:  80px;
+  --space-12:  96px;
+  --space-14:  128px;
+  --space-16:  160px;
+
+  /* Blueprint grid module (matches the texture cadence) */
+  --grid-unit:       32px;  /* minor square */
+  --grid-unit-major: 128px; /* major square (4 minors) */
+
+  /* Layout */
+  --container-sm:  640px;
+  --container-md:  840px;
+  --container-lg:  1080px;
+  --container-xl:  1280px;
+  --container-2xl: 1480px;
+  --gutter:        24px;
+
+  /* Control heights */
+  --control-sm: 32px;
+  --control-md: 40px;
+  --control-lg: 48px;
+  --control-xl: 56px;
+}
